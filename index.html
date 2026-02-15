@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pergamino Animado</title>
+
+  <!-- ENLACE CORRECTO AL CSS -->
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="intro-overlay" id="introOverlay">
+  <img src="./img/carruaje.png" alt="Introducción" class="intro-image">
+  <p class="intro-text">Bienvenido</p>
+  <div class="intro-bg"></div>
+</div>
+
+<button class="mute-toggle" id="muteToggle" type="button" aria-label="Silenciar">🔊</button>
+<audio id="bg-audio" src="./music/cancion.mp3" preload="auto" loop autoplay></audio>
+
+<div class="container" id="wrapper">
+
+  <!-- EXTREMO SUPERIOR -->
+  <div class="cap top">
+    <img src="./img/extremos.png" alt="Decoración superior" style="width:100%;height:100%;object-fit:contain;">
+  </div>
+
+  <!-- INDICADOR DE CLIC (FUERA DEL PERGAMINO) -->
+  <div class="tap-overlay" id="tapOverlay" aria-hidden="true">
+    <div class="tap-ring"></div>
+    <div class="tap-hand">👆</div>
+    <div class="tap-text">Toca el pergamino</div>
+  </div>
+
+  <!-- PERGAMINO (NO OCUPA ESPACIO AL CERRAR) -->
+  <div class="scroll closed" id="scroll">
+
+    <div class="content">
+      
+      <!-- SECCIÓN BIENVENIDA -->
+      <div class="welcome-section">
+        <h2><img src="./img/E.png" alt="E" class="initial-img">rase una vez...</h2>
+        <h2>en un reino tan lejano</h2>
+        <h2>vivia un <span class="prince-word">PRINCIPE</span> llamado:</h2>
+        <h1><img src="./img/name.png" alt="Emmett" class="name-img"></h1>
+      </div>
+
+      <!-- SECCIÓN PADRES -->
+      <div class="parents-section">
+        <p>En honor a su Bautizo y su Primer año sus padres</p>
+        <p>Roxana Fabiola Barriga Aguilar</p>
+        <p>Luis Manuel Hurtado Bravo</p>
+      </div>
+
+      <!-- SECCIÓN MENSAJE -->
+      <div class="message-section">
+        <p>Tienen el honor de invitarle a usted y su apreciable familia a esta gran celebracion</p>
+      </div>
+
+      <!-- SECCIÓN PADRINOS -->
+      <div class="godparents-section">
+        <p>Padrinos de Honor</p>
+        <p>Arturo Garfias Castellanos</p>
+        <p>Nayeli Flores Constantino</p>
+      </div>
+
+      <!-- SECCIÓN IMAGEN -->
+      <div class="image-section">
+        <div class="image-carousel">
+          <div class="carousel-track">
+            <div class="carousel-item"><img src="./img/carrusel/0.jpeg" alt="Foto 0"></div>
+            <div class="carousel-item"><img src="./img/carrusel/1.jpeg" alt="Foto 1"></div>
+            <div class="carousel-item"><img src="./img/carrusel/2.jpeg" alt="Foto 2"></div>
+            <div class="carousel-item"><img src="./img/carrusel/3.jpeg" alt="Foto 3"></div>
+            <div class="carousel-item"><img src="./img/carrusel/4.jpeg" alt="Foto 4"></div>
+            <div class="carousel-item"><img src="./img/carrusel/5.jpeg" alt="Foto 5"></div>
+            <div class="carousel-item"><img src="./img/carrusel/6.jpeg" alt="Foto 6"></div>
+            <div class="carousel-item"><img src="./img/carrusel/7.jpeg" alt="Foto 7"></div>
+            <div class="carousel-item"><img src="./img/carrusel/8.jpeg" alt="Foto 8"></div>
+            <div class="carousel-item"><img src="./img/carrusel/9.jpeg" alt="Foto 9"></div>
+            <div class="carousel-item"><img src="./img/carrusel/10.jpeg" alt="Foto 10"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN FECHA -->
+      <div class="date-section">
+        <div class="date-layout">
+          <div class="date-left">
+            <div class="dleft-top"><img src="./img/fecha.png" alt="Fecha" class="date-month-img"></div>
+            <div class="dleft-middle">28</div>
+            <div class="dleft-bottom">2026</div>
+          </div>
+          <div class="date-right">
+            <div class="date-right-top">
+              <div class="drt-left">2:00 <span class="time-meridiem">PM</span></div>
+              <div class="drt-right">
+                <a href="https://maps.app.goo.gl/tNacvEfS1qyd1ngK6" target="_blank" rel="noopener" class="location-link">
+                  esquina con, Avenida Golondrinas, Núm. 4, Buenos Aíres, Tuxtla Gutiérrez, Chis.
+                  <span class="location-icon">📍</span>
+                </a>
+              </div>
+            </div>
+            <div class="date-right-bottom">
+              <div class="drb-left">12:00 <span class="time-meridiem">PM</span></div>
+              <div class="drb-right">
+                <a href="https://maps.app.goo.gl/J99cXsoE17yeg6F97" target="_blank" rel="noopener" class="location-link">
+                  Av Central Pte 752, Guadalupe, Tuxtla Gutiérrez, Chis.
+                  <span class="location-icon">📍</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="envelopes-section">
+        <h3 class="envelopes-title">Lluvia de sobres</h3>
+        <p class="envelopes-text">Habrá lluvia de sobres. Si prefieres transferencia, puedes copiar la cuenta:</p>
+        <button
+          class="account-box copy-account"
+          type="button"
+          data-account="012345678901234567"
+          aria-label="Tocar para copiar la cuenta"
+        >
+          <span class="account-label">CLABE</span>
+          <span class="account-value">002626905074466542</span>
+          <span class="copy-hint">Toca para copiar</span>
+        </button>
+      </div>
+
+      <div class="carriage-section">
+        <img src="./img/carruaje.png" alt="Carruaje" class="carriage-img">
+      </div>
+
+      <div class="confirm-section">
+        <div class="confirm-layout">
+          <div class="confirm-bottom">
+            <p>eres mi invitado favorito, no faltes</p>
+          </div>
+          <div class="confirm-top">
+            <a
+              class="confirm-button"
+              href="https://wa.me/529612112625?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20invitaci%C3%B3n.%20%F0%9F%8E%89"
+              target="_blank"
+              rel="noopener"
+            >
+              Confirmar tu asistencia
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- EXTREMO INFERIOR -->
+  <div class="cap bottom" style="background:none;">
+    <img src="./img/extremos.png" alt="Decoración inferior" style="width:100%;height:100%;object-fit:contain;">
+  </div>
+
+</div>
+
+<!-- JS AL FINAL DEL BODY -->
+<script src="./script.js"></script>
+</body>
+</html>
