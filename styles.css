@@ -108,7 +108,7 @@ body {
   padding: 48px;
   padding-bottom: clamp(40px, 8vh, 90px);
   background-color: #dcdcdc;
-  background-image: linear-gradient(rgba(220,220,220,0.7), rgba(220,220,220,0.7)), url("./img/castle.png");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("./img/castle.png");
   background-repeat: no-repeat;
   background-position: center 20%;
   background-size: clamp(520px, 125%, 1100px) auto;
@@ -581,6 +581,27 @@ body {
 .location-icon {
   margin-left: 4px;
   font-size: 1.2em;
+}
+
+.contact-badge {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: clamp(10px, 1.6vw, 13px);
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  letter-spacing: 0.2px;
+  z-index: 50;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.contact-badge:hover {
+  opacity: 1;
 }
 
 /* ===== RESPONSIVE ===== */
