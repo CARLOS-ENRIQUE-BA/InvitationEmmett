@@ -126,6 +126,33 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.pause();
     audio.currentTime = 0;
   }
+  // Parallax del castillo: mueve el fondo al hacer scroll interno del pergamino
+  const content = document.querySelector(".content");
+  if (content) {
+    let ticking = false;
+    const update = () => {
+      const range = content.scrollHeight - content.clientHeight;
+      if (range <= 0) {
+        content.style.backgroundPosition = "center 20%";
+      } else {
+        const pct = content.scrollTop / range; // 0..1
+        const y = 15 + pct * 35; // de 15% a 50%
+        content.style.backgroundPosition = `center ${y}%`;
+      }
+      ticking = false;
+    };
+    content.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    update();
+  }
   const intro = document.getElementById("introOverlay");
   if (intro) {
     setTimeout(() => {
