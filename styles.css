@@ -143,7 +143,7 @@ body {
 .welcome-section h1 {
   margin: 14px 0;
   font-size: clamp(3rem, 7vw, 4.5rem);
-  color: #8b5a2b;
+  color: #ae8c1d;
   font-family: "Dancing Script", cursive;
 }
 .welcome-section .name-img {
@@ -188,6 +188,7 @@ body {
 .parents-section p,
 .godparents-section p {
   color: #36568f;
+  font-weight: bold;
 }
 
 
@@ -196,7 +197,7 @@ body {
   width: 70%;         /* Ancho solicitado del 60% */
   height: 100px;      /* Altura reducida (fija para ejemplo, o auto si es imagen real) */
   object-fit: cover;  /* Asegura que la imagen no se deforme */
-  border: 4px solid #8b5a2b;
+  border: 4px solid #ae8c1d;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -218,6 +219,8 @@ body {
 }
 .envelopes-text {
   margin: 6px 0 10px;
+  font-family: "MedievalSharp", cursive;
+  font-weight: bold;
 }
 .account-box {
   display: inline-flex;
@@ -225,7 +228,7 @@ body {
   align-items: center;
   gap: 4px;
   padding: 10px 14px;
-  border: 2px solid #8b5a2b;
+  border: 2px solid #ae8c1d;
   border-radius: 10px;
   background: #f2e8d5;
   color: #36568f;
@@ -233,7 +236,7 @@ body {
 }
 .account-label {
   font-weight: bold;
-  color: #8b5a2b;
+  color: #ae8c1d;
 }
 .account-value {
   font-variant-numeric: tabular-nums;
@@ -284,7 +287,7 @@ body {
   flex: 0 0 auto;
   width: var(--ciw);
   aspect-ratio: 1;
-  border: 4px solid #8b5a2b;
+  border: 4px solid #ae8c1d;
   border-radius: 10px;
   background: #f2e8d5;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -335,7 +338,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 280px;
-  border-right: 2px solid #8b5a2b; /* Único borde derecho solicitado */
+  border-right: 2px solid #ae8c1d; /* Único borde derecho solicitado */
 }
 .date-left .dleft-top,
 .date-left .dleft-middle,
@@ -383,7 +386,7 @@ body {
 }
 
 .date-right-top {
-  border-bottom: 2px solid #8b5a2b; /* Único borde abajo solicitado */
+  border-bottom: 2px solid #ae8c1d; /* Único borde abajo solicitado */
 }
 
 /* subdivisiones */
@@ -438,7 +441,7 @@ body {
 }
 
 .confirm-button {
-  background: #8b5a2b; /* color WhatsApp */
+  background: #ae8c1d; /* color WhatsApp */
   color: #fff;
   padding: 12px 18px;
   border-radius: 8px;
@@ -487,7 +490,7 @@ body {
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.15));
 }
 .intro-text {
-  color: #8b5a2b;
+  color: #ae8c1d;
   font-family: "Dancing Script", cursive;
   font-size: clamp(1.4rem, 3.2vw, 2.2rem);
   margin: 8px 0 0;
@@ -543,6 +546,9 @@ body {
 .confirm-bottom p {
   margin: 0;
   font-size: 1.1rem;
+  font-family: "MedievalSharp", cursive;
+  font-weight: bold;
+  color: #ae8c1d;
 }
 /* ===== MOVIMIENTO DE EXTREMOS (ELIMINADO PARA PEGARLOS AL SCROLL) ===== */
 .container.active .cap.top {
@@ -585,10 +591,10 @@ body {
   .message-section p,
   .godparents-section p,
   .confirm-bottom p,
-  .location-link,
   .dleft-top { font-size: 1.35rem; }
   .confirm-button { font-size: 1.2rem; }
   .image-carousel { --ciw: 120px; }
+  .location-link { font-size: 1.1rem; }
 }
 
 /* Mobile (hasta 480px) */
@@ -600,9 +606,9 @@ body {
   .message-section p,
   .godparents-section p,
   .confirm-bottom p,
-  .location-link,
   .dleft-top { font-size: 1.35rem; }
   .confirm-button { font-size: 1.2rem; }
+  .location-link { font-size: 1.1rem; }
   
   .scroll {
     width: 85vw; /* Aumentado un poco más para móviles */

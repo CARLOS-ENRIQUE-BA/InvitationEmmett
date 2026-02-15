@@ -5,6 +5,24 @@ wrapper.addEventListener("click", () => {
   wrapper.classList.toggle("active");
   scroll.classList.toggle("open");
   scroll.classList.toggle("closed");
+  // Sincroniza audio con abrir/cerrar
+  const a = document.getElementById("bg-audio");
+  if (a) {
+    if (wrapper.classList.contains("active")) {
+      a.muted = false;
+      a.play().catch(() => {
+        const resumeOnGesture = () => {
+          a.muted = false;
+          a.play().finally(() => {
+            document.removeEventListener("pointerdown", resumeOnGesture);
+          });
+        };
+        document.addEventListener("pointerdown", resumeOnGesture, { once: true });
+      });
+    } else {
+      try { a.pause(); } catch {}
+    }
+  }
   // Reposicionar overlay por si cambia el layout
   positionTapOverlay();
 });
@@ -99,32 +117,15 @@ function initAutoCarousel() {
 document.addEventListener("DOMContentLoaded", initAutoCarousel);
 
 const audio = document.getElementById("bg-audio");
-const muteToggle = document.getElementById("muteToggle");
-if (muteToggle) {
-  muteToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (!audio) return;
-    audio.muted = !audio.muted;
-    muteToggle.textContent = audio.muted ? "🔇" : "🔊";
-  });
-}
 
-wrapper.addEventListener("click", () => {
-  if (wrapper.classList.contains("active") && audio) {
-    audio.play().catch(() => {});
-  }
-});
+// (audio control ahora se hace en el click handler de wrapper superior)
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!audio) return;
-  audio.loop = true;
-  const ensurePlay = () =>
-    audio.play().catch(() => {
-      audio.muted = true;
-      if (muteToggle) muteToggle.textContent = "🔇";
-      return audio.play().catch(() => {});
-    });
-  ensurePlay();
+  if (audio) {
+    audio.loop = true;
+    audio.pause();
+    audio.currentTime = 0;
+  }
   const intro = document.getElementById("introOverlay");
   if (intro) {
     setTimeout(() => {
