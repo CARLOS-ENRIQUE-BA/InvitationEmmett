@@ -17,7 +17,13 @@ document.querySelectorAll(".confirm-button").forEach((btn) => {
 document.querySelectorAll(".copy-account").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    const account = btn.getAttribute("data-account");
+    let account = btn.getAttribute("data-account");
+    if (!account) {
+      const valEl = btn.querySelector(".account-value");
+      if (valEl) {
+        account = (valEl.textContent || "").replace(/\s+/g, "");
+      }
+    }
     const hint = btn.querySelector(".copy-hint");
     if (!account) return;
     const copy = async () => {
